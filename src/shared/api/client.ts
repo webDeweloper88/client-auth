@@ -80,6 +80,11 @@ class ApiClient {
     });
   }
 
+  // Метод для получения текущего токена
+  getAccessToken(): string | undefined {
+    return this.accessToken;
+  }
+
   // Health API
   health = {
     check: () => this.client.GET("/health"),
