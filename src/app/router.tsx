@@ -1,3 +1,4 @@
+//src/app/router.tsx
 import { App } from "@/app/App";
 import { ROUTES } from "@/shared/model/routes";
 import { createBrowserRouter } from "react-router-dom";

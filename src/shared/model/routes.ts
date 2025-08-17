@@ -1,3 +1,4 @@
+//src/shared/model/routes.ts
 import "react-router-dom";
 
 export const ROUTES = {
