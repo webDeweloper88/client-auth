@@ -11,6 +11,7 @@
     "api:gen": "npx openapi-typescript https://dev-auth.domlab.uz/api-json -o ./src/shared/api/schema.ts --root-types"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.85.3",
     "openapi-fetch": "^0.14.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
