@@ -46,3 +46,32 @@ export async function queryFn<T>(
   }
   throw response.error || new Error("Request failed");
 }
+
+// Хелпер для мутаций/произвольных вызовов без контекста React Query
+export async function withAuth<T>(
+  fetchFn: () => Promise<{ data?: T; error?: unknown }>
+): Promise<T | undefined> {
+  const response = await fetchFn();
+  if (response.error && (response.error as Response)?.status === 401) {
+    try {
+      const refreshResponse = await api.auth.refreshTokens();
+      if (!refreshResponse.error) {
+        const retryResponse = await fetchFn();
+        if (retryResponse.data) {
+          return retryResponse.data;
+        }
+        throw retryResponse.error || new Error("Retry failed");
+      }
+    } catch {
+      api.setAccessToken(undefined);
+      window.location.href = `${ROUTES.LOGIN}?from=${encodeURIComponent(
+        window.location.pathname
+      )}`;
+    }
+  }
+  if ("error" in response && response.error) {
+    throw response.error;
+  }
+  // Успешный ответ без тела (например, 204 No Content)
+  return response.data as T | undefined;
+}

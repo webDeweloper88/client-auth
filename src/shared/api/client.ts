@@ -1,7 +1,7 @@
 import createClient from "openapi-fetch";
 import type { components, paths } from "./schema";
 
-// Типы для удобства использования
+// Типы для DTO из OpenAPI схемы
 export type UserProfileDto = components["schemas"]["UserProfileDto"];
 export type UpdateUserProfileDto =
   components["schemas"]["UpdateUserProfileDto"];
@@ -19,14 +19,20 @@ export type LoginDto = components["schemas"]["LoginDto"];
 export type SetPasswordDto = components["schemas"]["SetPasswordDto"];
 export type SessionDto = components["schemas"]["SessionDto"];
 
+// Тип для ответа /auth/login
+export interface LoginResponse {
+  message: string;
+  access_token: string;
+}
+
 // Интерфейс для конфигурации клиента
 interface ApiClientConfig {
   baseUrl: string;
   accessToken?: string;
-  onUnauthorized?: () => void; // Callback для обработки 401 ошибки
+  onUnauthorized?: () => void;
 }
 
-// Класс для создания API клиента с поддержкой авторизации
+// Класс API клиента
 class ApiClient {
   private client: ReturnType<typeof createClient<paths>>;
   private baseUrl: string;
@@ -42,7 +48,6 @@ class ApiClient {
     this.accessToken = config.accessToken;
     this.onUnauthorized = config.onUnauthorized;
 
-    // Кастомная функция fetch для обработки 401 ошибок
     this.customFetch = async (
       input: RequestInfo,
       init?: RequestInit
@@ -54,7 +59,6 @@ class ApiClient {
       return response;
     };
 
-    // Инициализация клиента с базовым URL и настройкой заголовков
     this.client = createClient<paths>({
       baseUrl: this.baseUrl,
       headers: {
@@ -67,7 +71,12 @@ class ApiClient {
     });
   }
 
-  // Метод для обновления токена
+  // Публичный метод для получения токена
+  getAccessToken(): string | undefined {
+    return this.accessToken;
+  }
+
+  // Публичный метод для установки токена
   setAccessToken(token: string | undefined) {
     this.accessToken = token;
     this.client = createClient<paths>({
@@ -80,11 +89,6 @@ class ApiClient {
     });
   }
 
-  // Метод для получения текущего токена
-  getAccessToken(): string | undefined {
-    return this.accessToken;
-  }
-
   // Health API
   health = {
     check: () => this.client.GET("/health"),
@@ -92,15 +96,20 @@ class ApiClient {
 
   // User API
   user = {
-    getProfile: () => this.client.GET("/user/profile"),
+    getProfile: () =>
+      this.client.GET("/user/profile"),
     updateProfile: (data: UpdateUserProfileDto) =>
       this.client.PATCH("/user/update-profile", { body: data }),
     changePassword: (data: ChangePasswordDto) =>
       this.client.PATCH("/user/me/change-password", { body: data }),
-    getAccessLogs: () => this.client.GET("/user/me/access-logs"),
+    getAccessLogs: () =>
+      this.client.GET("/user/me/access-logs"),
     getAccessLogsByAdmin: (id: string) =>
-      this.client.GET("/user/{id}/access-logs", { params: { path: { id } } }),
-    setup2FA: () => this.client.POST("/user/me/2fa/setup"),
+      this.client.GET("/user/{id}/access-logs", {
+        params: { path: { id } },
+      }),
+    setup2FA: () =>
+      this.client.POST("/user/me/2fa/setup"),
     verify2FA: (data: Verify2FADto) =>
       this.client.POST("/user/me/2fa/verify", { body: data }),
   };
@@ -108,7 +117,9 @@ class ApiClient {
   // Admin User API
   adminUser = {
     createUser: (data: CreateUserByAdminDto) =>
-      this.client.POST("/admin/users/create-user-by-admin", { body: data }),
+      this.client.POST("/admin/users/create-user-by-admin", {
+        body: data,
+      }),
     getAllUsers: (params?: {
       role?: "user" | "admin";
       status?: "PENDING" | "ACTIVE" | "BLOCKED" | "DELETED";
@@ -176,7 +187,8 @@ class ApiClient {
       this.client.GET("/auth/verify-email", { params: { query: { token } } }),
     resendVerification: (data: ResendVerificationDto) =>
       this.client.POST("/auth/resend-verification", { body: data }),
-    login: (data: LoginDto) => this.client.POST("/auth/login", { body: data }),
+    login: (data: LoginDto) =>
+      this.client.POST("/auth/login", { body: data }),
     logout: () => this.client.PATCH("/auth/logout"),
     refreshTokens: () => this.client.POST("/auth/refresh"),
     setPassword: (data: SetPasswordDto) =>
@@ -185,7 +197,8 @@ class ApiClient {
 
   // Session API
   session = {
-    getMySessions: () => this.client.GET("/users/me/sessions"),
+    getMySessions: () =>
+      this.client.GET("/users/me/sessions"),
     deleteOtherSessions: () => this.client.DELETE("/users/me/sessions"),
     deleteAllSessions: () => this.client.DELETE("/users/me/sessions/all"),
     deleteMySession: (id: string) =>
@@ -202,7 +215,10 @@ class ApiClient {
       ipAddress?: string;
       device?: string;
       userId?: string;
-    }) => this.client.GET("/admin/sessions", { params: { query: params } }),
+    }) =>
+      this.client.GET("/admin/sessions", {
+        params: { query: params },
+      }),
     deleteAllSessions: () => this.client.DELETE("/admin/sessions"),
     getUserSessions: (userId: string) =>
       this.client.GET("/admin/sessions/user/{userId}", {
@@ -220,6 +236,8 @@ class ApiClient {
   oauth = {
     googleAuth: () => this.client.GET("/auth/oauth/google"),
     googleCallback: () => this.client.GET("/auth/oauth/google/callback"),
+    yandexAuth: () => this.client.GET("/auth/oauth/yandex"),
+    yandexCallback: () => this.client.GET("/auth/oauth/yandex/callback"),
     disconnectOAuth: (provider: "google" | "yandex") =>
       this.client.DELETE("/auth/oauth/disconnect/{provider}", {
         params: { path: { provider } },
@@ -230,18 +248,14 @@ class ApiClient {
       limit?: number;
     }) =>
       this.client.GET("/auth/oauth/accounts", { params: { query: params } }),
-    yandexAuth: () => this.client.GET("/auth/oauth/yandex"),
-    yandexCallback: () => this.client.GET("/auth/oauth/yandex/callback"),
   };
 }
 
-// Функция для создания экземпляра API клиента
+// Функция для создания экземпляра клиента
 export function createApiClient(config: ApiClientConfig) {
   return new ApiClient(config);
 }
 
-// Экспорт типов для внешнего использования
+// Экспорт типов и экземпляра клиента
 export type { ApiClient };
-
-// Экспорт экземпляра клиента по умолчанию (для удобства)
-export const api = createApiClient({ baseUrl: "https://dev-auth.domlab.uz" });
+export const api = createApiClient({ baseUrl: "https://dev-auth.domlab.uz/" });

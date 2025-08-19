@@ -1,4 +1,5 @@
 import AppHeader from "@/features/header";
+import { ToastProvider } from "@/shared/ui/ToastProvider";
 import { Outlet, useLocation } from "react-router-dom";
 
 export function App() {
@@ -7,9 +8,11 @@ export function App() {
   const isAuth =
     location.pathname === "/login" || location.pathname === "/register";
   return (
-    <div>
-      {!isAuth && <AppHeader />}
-      <Outlet />
-    </div>
+    <ToastProvider>
+      <div>
+        {!isAuth && <AppHeader />}
+        <Outlet />
+      </div>
+    </ToastProvider>
   );
 }

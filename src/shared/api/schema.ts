@@ -4,1752 +4,1791 @@
  */
 
 export interface paths {
-    "/health": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["HealthController_check"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+  "/health": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/user/profile": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Получение профиля текущего пользователя */
-        get: operations["UserController_getMe"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get: operations["HealthController_check"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/user/profile": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/user/update-profile": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        /** Обновление профиля текущего пользователя */
-        patch: operations["UserController_updateMe"];
-        trace?: never;
+    /** Получение профиля текущего пользователя */
+    get: operations["UserController_getMe"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/user/update-profile": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/user/me/change-password": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        /** Изменение пароля текущего пользователя */
-        patch: operations["UserController_changePassword"];
-        trace?: never;
+    get?: never;
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    /** Обновление профиля текущего пользователя */
+    patch: operations["UserController_updateMe"];
+    trace?: never;
+  };
+  "/user/me/change-password": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/user/me/access-logs": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Получение истории входов текущего пользователя */
-        get: operations["UserController_getAccessLogs"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    /** Изменение пароля текущего пользователя */
+    patch: operations["UserController_changePassword"];
+    trace?: never;
+  };
+  "/user/me/access-logs": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/user/{id}/access-logs": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Получение истории входов пользователя администратором */
-        get: operations["UserController_getAccessLogsByAdmin"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Получение истории входов текущего пользователя */
+    get: operations["UserController_getAccessLogs"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/user/{id}/access-logs": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/user/me/2fa/setup": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Настройка 2FA для текущего пользователя */
-        post: operations["UserController_setup2FA"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Получение истории входов пользователя администратором */
+    get: operations["UserController_getAccessLogsByAdmin"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/user/me/2fa/setup": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/user/me/2fa/verify": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Верификация 2FA для текущего пользователя */
-        post: operations["UserController_verify2FA"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    /** Настройка 2FA для текущего пользователя */
+    post: operations["UserController_setup2FA"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/user/me/2fa/verify": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/admin/users/create-user-by-admin": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Создание нового пользователя администратором */
-        post: operations["AdminUserController_createByAdmin"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    /** Верификация 2FA для текущего пользователя */
+    post: operations["UserController_verify2FA"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/admin/users/create-user-by-admin": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/admin/users/find-all": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Получение списка пользователей с фильтрацией и пагинацией (admin only) */
-        get: operations["AdminUserController_getAll"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    /** Создание нового пользователя администратором */
+    post: operations["AdminUserController_createByAdmin"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/admin/users/find-all": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/admin/users/find-by-id/{id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Получение пользователя по ID (admin only) */
-        get: operations["AdminUserController_getById"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Получение списка пользователей с фильтрацией и пагинацией (admin only) */
+    get: operations["AdminUserController_getAll"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/admin/users/find-by-id/{id}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/admin/users/update-by-admin/{id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        /** Обновление Role пользователя администратором */
-        patch: operations["AdminUserController_updateByAdmin"];
-        trace?: never;
+    /** Получение пользователя по ID (admin only) */
+    get: operations["AdminUserController_getById"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/admin/users/update-by-admin/{id}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/admin/users/delete-by-admin/{id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        /** Удаление пользователя администратором */
-        delete: operations["AdminUserController_deleteByAdmin"];
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    /** Обновление Role пользователя администратором */
+    patch: operations["AdminUserController_updateByAdmin"];
+    trace?: never;
+  };
+  "/admin/users/delete-by-admin/{id}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/admin/users/users/{id}/block": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        /** Блокировка пользователя администратором */
-        patch: operations["AdminUserController_blockUser"];
-        trace?: never;
+    get?: never;
+    put?: never;
+    post?: never;
+    /** Удаление пользователя администратором */
+    delete: operations["AdminUserController_deleteByAdmin"];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/admin/users/users/{id}/block": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/admin/users/users/{id}/unblock": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        /** Разблокировка пользователя администратором */
-        patch: operations["AdminUserController_unblockUser"];
-        trace?: never;
+    get?: never;
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    /** Блокировка пользователя администратором */
+    patch: operations["AdminUserController_blockUser"];
+    trace?: never;
+  };
+  "/admin/users/users/{id}/unblock": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/access-log": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Просмотр логов доступа (только для админов) */
-        get: operations["AccessLogController_getLogs"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    /** Разблокировка пользователя администратором */
+    patch: operations["AdminUserController_unblockUser"];
+    trace?: never;
+  };
+  "/access-log": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/register": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Регистрация нового пользователя */
-        post: operations["AuthController_register"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Просмотр логов доступа (только для админов) */
+    get: operations["AccessLogController_getLogs"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/register": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/verify-email": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Подтверждение Email по токену */
-        get: operations["AuthController_verifyEmail"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    /** Регистрация нового пользователя */
+    post: operations["AuthController_register"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/verify-email": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/resend-verification": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Повторная отправка письма для подтверждения Email */
-        post: operations["AuthController_resendEmailVerification"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Подтверждение Email по токену */
+    get: operations["AuthController_verifyEmail"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/resend-verification": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/login": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Вход пользователя */
-        post: operations["AuthController_login"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    /** Повторная отправка письма для подтверждения Email */
+    post: operations["AuthController_resendEmailVerification"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/login": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/logout": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        /** выход из системы */
-        patch: operations["AuthController_logout"];
-        trace?: never;
+    get?: never;
+    put?: never;
+    /** Вход пользователя */
+    post: operations["AuthController_login"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/logout": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/refresh": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Обновить access токен по refresh токену */
-        post: operations["AuthController_refreshTokens"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    /** выход из системы */
+    patch: operations["AuthController_logout"];
+    trace?: never;
+  };
+  "/auth/refresh": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/set-password": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Установить пароль OAuth-пользователю */
-        post: operations["AuthController_setPassword"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    /** Обновить access токен по refresh токену */
+    post: operations["AuthController_refreshTokens"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/set-password": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/users/me/sessions": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Получить активные сессии пользователя */
-        get: operations["SessionController_getMySessions"];
-        put?: never;
-        post?: never;
-        /** Выйти со всех устройств, кроме текущего */
-        delete: operations["SessionController_deleteOtherSessions"];
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    /** Установить пароль OAuth-пользователю */
+    post: operations["AuthController_setPassword"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/users/me/sessions": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/users/me/sessions/all": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        /** Выйти со всех устройств, включая текущее */
-        delete: operations["SessionController_deleteAllSessions"];
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Получить активные сессии пользователя */
+    get: operations["SessionController_getMySessions"];
+    put?: never;
+    post?: never;
+    /** Выйти со всех устройств, кроме текущего */
+    delete: operations["SessionController_deleteOtherSessions"];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/users/me/sessions/all": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/users/me/sessions/{id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        /** Завершить конкретную сессию (другое устройство) */
-        delete: operations["SessionController_deleteMySession"];
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    post?: never;
+    /** Выйти со всех устройств, включая текущее */
+    delete: operations["SessionController_deleteAllSessions"];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/users/me/sessions/{id}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/admin/sessions": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Получить список всех сессий (фильтрация, пагинация) */
-        get: operations["AdminSessionController_getAllSessions"];
-        put?: never;
-        post?: never;
-        /** Удалить все сессии в системе (осторожно!) */
-        delete: operations["AdminSessionController_deleteAllSessions"];
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    post?: never;
+    /** Завершить конкретную сессию (другое устройство) */
+    delete: operations["SessionController_deleteMySession"];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/admin/sessions": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/admin/sessions/user/{userId}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Получить все сессии пользователя по ID */
-        get: operations["AdminSessionController_getUserSessions"];
-        put?: never;
-        post?: never;
-        /** Удалить все сессии конкретного пользователя */
-        delete: operations["AdminSessionController_deleteSessionsByUserId"];
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Получить список всех сессий (фильтрация, пагинация) */
+    get: operations["AdminSessionController_getAllSessions"];
+    put?: never;
+    post?: never;
+    /** Удалить все сессии в системе (осторожно!) */
+    delete: operations["AdminSessionController_deleteAllSessions"];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/admin/sessions/user/{userId}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/admin/sessions/{id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        /** Удалить сессию по ID */
-        delete: operations["AdminSessionController_deleteSession"];
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Получить все сессии пользователя по ID */
+    get: operations["AdminSessionController_getUserSessions"];
+    put?: never;
+    post?: never;
+    /** Удалить все сессии конкретного пользователя */
+    delete: operations["AdminSessionController_deleteSessionsByUserId"];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/admin/sessions/{id}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/oauth/google": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Перенаправление на Google OAuth */
-        get: operations["OAuthController_googleAuth"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    post?: never;
+    /** Удалить сессию по ID */
+    delete: operations["AdminSessionController_deleteSession"];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/oauth/google": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/oauth/google/callback": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Google OAuth callback */
-        get: operations["OAuthController_googleCallback"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Перенаправление на Google OAuth */
+    get: operations["OAuthController_googleAuth"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/oauth/google/callback": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/oauth/disconnect/{provider}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        /** Удаление привязки OAuth-аккаунта (например, Google) */
-        delete: operations["OAuthController_disconnectOAuth"];
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Google OAuth callback */
+    get: operations["OAuthController_googleCallback"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/oauth/disconnect/{provider}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/oauth/accounts": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Список привязанных OAuth-аккаунтов */
-        get: operations["OAuthController_getConnectedAccounts"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    post?: never;
+    /** Удаление привязки OAuth-аккаунта (например, Google) */
+    delete: operations["OAuthController_disconnectOAuth"];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/oauth/accounts": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/oauth/yandex": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Перенаправление на Yandex OAuth */
-        get: operations["OAuthController_yandexAuth"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Список привязанных OAuth-аккаунтов */
+    get: operations["OAuthController_getConnectedAccounts"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/oauth/yandex": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/oauth/yandex/callback": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Yandex OAuth callback */
-        get: operations["OAuthController_yandexCallback"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Перенаправление на Yandex OAuth */
+    get: operations["OAuthController_yandexAuth"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/oauth/yandex/callback": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
+    /** Yandex OAuth callback */
+    get: operations["OAuthController_yandexCallback"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
 }
 export type webhooks = Record<string, never>;
 export interface components {
-    schemas: {
-        UserProfileDto: {
-            /**
-             * @description Unique identifier of the user
-             * @example 123e4567-e89b-12d3-a456-426614174000
-             */
-            id: string;
-            /**
-             * @description Email address of the user
-             * @example user@example.com
-             */
-            email: string;
-            /**
-             * @description Display name of the user
-             * @example John Doe
-             */
-            displayName: string;
-            /**
-             * @description Profile picture URL of the user
-             * @example https://example.com/profile.jpg
-             */
-            pictureUrl: string;
-            /**
-             * @description Role of the user
-             * @default user
-             * @enum {string}
-             */
-            role: "user" | "admin";
-            /**
-             * @description Account status of the user
-             * @default PENDING
-             * @enum {string}
-             */
-            accountStatus: "PENDING" | "ACTIVE" | "BLOCKED" | "DELETED";
-            /**
-             * Format: date-time
-             * @description Creation date of the user account
-             * @example 202501-01T00:00:00Z
-             */
-            createdAt: string;
-            /**
-             * Format: date-time
-             * @description Last update date of the user account
-             * @example 2025-01-01T00:00:00Z
-             */
-            updatedAt: string;
-        };
-        UpdateUserProfileDto: {
-            /** @description Отображаемое имя пользователя */
-            displayName?: string;
-            /** @description URL изображения пользователя (аватар) */
-            pictureUrl?: string;
-        };
-        ChangePasswordDto: {
-            /** @description Текущий пароль */
-            currentPassword: string;
-            /** @description Новый пароль (не менее 6 символов) */
-            newPassword: string;
-        };
-        AccessLogDto: {
-            /**
-             * @description Уникальный идентификатор записи журнала доступа
-             * @example 123e4567-e89b-12d3-a456-426614174000
-             */
-            id: string;
-            /**
-             * @description Тип события журнала доступа
-             * @enum {string}
-             */
-            eventType: "REGISTER" | "LOGIN_SUCCESS" | "LOGIN_FAIL" | "EMAIL_VERIFIED" | "EMAIL_RESEND" | "EMAIL_FAILED" | "PASSWORD_CHANGED" | "ACCOUNT_BLOCKED" | "ACCOUNT_UNLOCKED" | "LOGIN_2FA_REQUIRED" | "ENABLE_2FA" | "DISABLE_2FA" | "LOGOUT" | "LOGIN_OAUTH_SUCCESS" | "LOGIN_OAUTH_FAIL" | "OAUTH_DISCONNECT" | "PASSWORD_SET_OAUTH_SUCCESS";
-            /** @description IP-адрес пользователя */
-            ipAddress?: string;
-            /** @description User-Agent пользователя */
-            userAgent?: string;
-            /**
-             * Format: date-time
-             * @description Дата и время создания записи
-             */
-            createdAt: string;
-        };
-        QRCodeDto: {
-            /** @description QR-код в формате Base64 (data:image/png;base64,...) */
-            qrCodeImage: string;
-            /** @description Секрет для подключения в приложении (например, Google Authenticator) */
-            secret: string;
-        };
-        Verify2FADto: {
-            /** @description Код из приложения 2FA (6 цифр) */
-            token: string;
-            /** @description Секрет (base32), полученный при генерации QR-кода */
-            secret: string;
-        };
-        CreateUserByAdminDto: {
-            /**
-             * @description Email нового пользователя
-             * @example user@example.com
-             */
-            email: string;
-            /**
-             * @description Пароль пользователя
-             * @example strongpassword123
-             */
-            hash: string;
-            /** @description Отображаемое имя пользователя */
-            displayName?: string;
-            /** @description URL изображения профиля пользователя */
-            pictureUrl?: string;
-            /**
-             * @description Роль пользователя
-             * @default user
-             * @enum {string}
-             */
-            role: "user" | "admin";
-            /**
-             * @description Статус аккаунта пользователя
-             * @default ACTIVE
-             * @enum {string}
-             */
-            accountStatus: "PENDING" | "ACTIVE" | "BLOCKED" | "DELETED";
-        };
-        UpdateUserAdminDto: {
-            /**
-             * @description Новая роль пользователя
-             * @enum {string}
-             */
-            role?: "user" | "admin";
-            /**
-             * @description Новый статус аккаунта
-             * @enum {string}
-             */
-            accountStatus?: "PENDING" | "ACTIVE" | "BLOCKED" | "DELETED";
-        };
-        RegisterDto: {
-            /** @example webdeweloper88@gmail.com */
-            email: string;
-            /** @example password123 */
-            password: string;
-            /** @example John Doe */
-            displayName: string;
-        };
-        ResendVerificationDto: {
-            /** @example user@example.com */
-            email: string;
-        };
-        LoginDto: {
-            /** @example webdeweloper88@gmail.com */
-            email: string;
-            /** @example password123 */
-            password: string;
-            /**
-             * @description Тип клиента, с которого выполняется вход (web или mobile)
-             * @example web
-             */
-            client?: string;
-        };
-        SetPasswordDto: {
-            /** @example newStrongPassword123! */
-            password: string;
-        };
-        SessionDto: {
-            /**
-             * @description ID of the session
-             * @example 123e4567-e89b-12d3-a456-426614174000
-             */
-            id: string;
-            /**
-             * @description Device of the session
-             * @example kompyuter
-             */
-            device: string;
-            /**
-             * @description IP address of the session
-             * @example 192.168.0.1
-             */
-            ipAddress: string;
-            /**
-             * @description Location of the session
-             * @example Tashkent, Uzbekistan
-             */
-            location?: string;
-            /**
-             * @description Last active date of the session
-             * @example 2025-03-15T12:00:00Z
-             */
-            lastActive: string;
-            /**
-             * @description Expires at date of the session
-             * @example 2025-03-15T12:00:00Z
-             */
-            expiresAt: string;
-            /**
-             * @description Is current session
-             * @example true
-             */
-            isCurrent: boolean;
-        };
+  schemas: {
+    UserProfileDto: {
+      /**
+       * @description Unique identifier of the user
+       * @example 123e4567-e89b-12d3-a456-426614174000
+       */
+      id: string;
+      /**
+       * @description Email address of the user
+       * @example user@example.com
+       */
+      email: string;
+      /**
+       * @description Display name of the user
+       * @example John Doe
+       */
+      displayName: string;
+      /**
+       * @description Profile picture URL of the user
+       * @example https://example.com/profile.jpg
+       */
+      pictureUrl: string;
+      /**
+       * @description Role of the user
+       * @default user
+       * @enum {string}
+       */
+      role: "user" | "admin";
+      /**
+       * @description Account status of the user
+       * @default PENDING
+       * @enum {string}
+       */
+      accountStatus: "PENDING" | "ACTIVE" | "BLOCKED" | "DELETED";
+      /**
+       * Format: date-time
+       * @description Creation date of the user account
+       * @example 202501-01T00:00:00Z
+       */
+      createdAt: string;
+      /**
+       * Format: date-time
+       * @description Last update date of the user account
+       * @example 2025-01-01T00:00:00Z
+       */
+      updatedAt: string;
     };
-    responses: never;
-    parameters: never;
-    requestBodies: never;
-    headers: never;
-    pathItems: never;
+    UpdateUserProfileDto: {
+      /** @description Отображаемое имя пользователя */
+      displayName?: string;
+      /** @description URL изображения пользователя (аватар) */
+      pictureUrl?: string;
+    };
+    ChangePasswordDto: {
+      /** @description Текущий пароль */
+      currentPassword: string;
+      /** @description Новый пароль (не менее 6 символов) */
+      newPassword: string;
+    };
+    AccessLogDto: {
+      /**
+       * @description Уникальный идентификатор записи журнала доступа
+       * @example 123e4567-e89b-12d3-a456-426614174000
+       */
+      id: string;
+      /**
+       * @description Тип события журнала доступа
+       * @enum {string}
+       */
+      eventType:
+        | "REGISTER"
+        | "LOGIN_SUCCESS"
+        | "LOGIN_FAIL"
+        | "EMAIL_VERIFIED"
+        | "EMAIL_RESEND"
+        | "EMAIL_FAILED"
+        | "PASSWORD_CHANGED"
+        | "ACCOUNT_BLOCKED"
+        | "ACCOUNT_UNLOCKED"
+        | "LOGIN_2FA_REQUIRED"
+        | "ENABLE_2FA"
+        | "DISABLE_2FA"
+        | "LOGOUT"
+        | "LOGIN_OAUTH_SUCCESS"
+        | "LOGIN_OAUTH_FAIL"
+        | "OAUTH_DISCONNECT"
+        | "PASSWORD_SET_OAUTH_SUCCESS";
+      /** @description IP-адрес пользователя */
+      ipAddress?: string;
+      /** @description User-Agent пользователя */
+      userAgent?: string;
+      /**
+       * Format: date-time
+       * @description Дата и время создания записи
+       */
+      createdAt: string;
+    };
+    QRCodeDto: {
+      /** @description QR-код в формате Base64 (data:image/png;base64,...) */
+      qrCodeImage: string;
+      /** @description Секрет для подключения в приложении (например, Google Authenticator) */
+      secret: string;
+    };
+    Verify2FADto: {
+      /** @description Код из приложения 2FA (6 цифр) */
+      token: string;
+      /** @description Секрет (base32), полученный при генерации QR-кода */
+      secret: string;
+    };
+    CreateUserByAdminDto: {
+      /**
+       * @description Email нового пользователя
+       * @example user@example.com
+       */
+      email: string;
+      /**
+       * @description Пароль пользователя
+       * @example strongpassword123
+       */
+      hash: string;
+      /** @description Отображаемое имя пользователя */
+      displayName?: string;
+      /** @description URL изображения профиля пользователя */
+      pictureUrl?: string;
+      /**
+       * @description Роль пользователя
+       * @default user
+       * @enum {string}
+       */
+      role: "user" | "admin";
+      /**
+       * @description Статус аккаунта пользователя
+       * @default ACTIVE
+       * @enum {string}
+       */
+      accountStatus: "PENDING" | "ACTIVE" | "BLOCKED" | "DELETED";
+    };
+    UpdateUserAdminDto: {
+      /**
+       * @description Новая роль пользователя
+       * @enum {string}
+       */
+      role?: "user" | "admin";
+      /**
+       * @description Новый статус аккаунта
+       * @enum {string}
+       */
+      accountStatus?: "PENDING" | "ACTIVE" | "BLOCKED" | "DELETED";
+    };
+    RegisterDto: {
+      /** @example webdeweloper88@gmail.com */
+      email: string;
+      /** @example password123 */
+      password: string;
+      /** @example John Doe */
+      displayName: string;
+    };
+    ResendVerificationDto: {
+      /** @example user@example.com */
+      email: string;
+    };
+    LoginDto: {
+      /** @example webdeweloper88@gmail.com */
+      email: string;
+      /** @example password123 */
+      password: string;
+      /**
+       * @description Тип клиента, с которого выполняется вход (web или mobile)
+       * @example web
+       */
+      client?: string;
+    };
+    SetPasswordDto: {
+      /** @example newStrongPassword123! */
+      password: string;
+    };
+    SessionDto: {
+      /**
+       * @description ID of the session
+       * @example 123e4567-e89b-12d3-a456-426614174000
+       */
+      id: string;
+      /**
+       * @description Device of the session
+       * @example kompyuter
+       */
+      device: string;
+      /**
+       * @description IP address of the session
+       * @example 192.168.0.1
+       */
+      ipAddress: string;
+      /**
+       * @description Location of the session
+       * @example Tashkent, Uzbekistan
+       */
+      location?: string;
+      /**
+       * @description Last active date of the session
+       * @example 2025-03-15T12:00:00Z
+       */
+      lastActive: string;
+      /**
+       * @description Expires at date of the session
+       * @example 2025-03-15T12:00:00Z
+       */
+      expiresAt: string;
+      /**
+       * @description Is current session
+       * @example true
+       */
+      isCurrent: boolean;
+    };
+  };
+  responses: never;
+  parameters: never;
+  requestBodies: never;
+  headers: never;
+  pathItems: never;
 }
-export type SchemaUserProfileDto = components['schemas']['UserProfileDto'];
-export type SchemaUpdateUserProfileDto = components['schemas']['UpdateUserProfileDto'];
-export type SchemaChangePasswordDto = components['schemas']['ChangePasswordDto'];
-export type SchemaAccessLogDto = components['schemas']['AccessLogDto'];
-export type SchemaQrCodeDto = components['schemas']['QRCodeDto'];
-export type SchemaVerify2FaDto = components['schemas']['Verify2FADto'];
-export type SchemaCreateUserByAdminDto = components['schemas']['CreateUserByAdminDto'];
-export type SchemaUpdateUserAdminDto = components['schemas']['UpdateUserAdminDto'];
-export type SchemaRegisterDto = components['schemas']['RegisterDto'];
-export type SchemaResendVerificationDto = components['schemas']['ResendVerificationDto'];
-export type SchemaLoginDto = components['schemas']['LoginDto'];
-export type SchemaSetPasswordDto = components['schemas']['SetPasswordDto'];
-export type SchemaSessionDto = components['schemas']['SessionDto'];
+export type SchemaUserProfileDto = components["schemas"]["UserProfileDto"];
+export type SchemaUpdateUserProfileDto =
+  components["schemas"]["UpdateUserProfileDto"];
+export type SchemaChangePasswordDto =
+  components["schemas"]["ChangePasswordDto"];
+export type SchemaAccessLogDto = components["schemas"]["AccessLogDto"];
+export type SchemaQrCodeDto = components["schemas"]["QRCodeDto"];
+export type SchemaVerify2FaDto = components["schemas"]["Verify2FADto"];
+export type SchemaCreateUserByAdminDto =
+  components["schemas"]["CreateUserByAdminDto"];
+export type SchemaUpdateUserAdminDto =
+  components["schemas"]["UpdateUserAdminDto"];
+export type SchemaRegisterDto = components["schemas"]["RegisterDto"];
+export type SchemaResendVerificationDto =
+  components["schemas"]["ResendVerificationDto"];
+export type SchemaLoginDto = components["schemas"]["LoginDto"];
+export type SchemaSetPasswordDto = components["schemas"]["SetPasswordDto"];
+export type SchemaSessionDto = components["schemas"]["SessionDto"];
 export type $defs = Record<string, never>;
 export interface operations {
-    HealthController_check: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+  HealthController_check: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    UserController_getMe: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description Профиль текущего пользователя */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["UserProfileDto"];
-                };
-            };
-        };
+        content?: never;
+      };
     };
-    UserController_updateMe: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["UpdateUserProfileDto"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["UserProfileDto"];
-                };
-            };
-        };
+  };
+  UserController_getMe: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    UserController_changePassword: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description Профиль текущего пользователя */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["ChangePasswordDto"];
-            };
+        content: {
+          "application/json": components["schemas"]["UserProfileDto"];
         };
-        responses: {
-            /** @description Пароль успешно изменен */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Неверный текущий пароль */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+      };
     };
-    UserController_getAccessLogs: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description История входов пользователя */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["AccessLogDto"][];
-                };
-            };
-        };
+  };
+  UserController_updateMe: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    UserController_getAccessLogsByAdmin: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description ID пользователя */
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description История входов пользователя (admin only) */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["AccessLogDto"][];
-                };
-            };
-            /** @description Ta’qiqlangan */
-            403: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Foydalanuvchi topilmadi */
-            404: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["UpdateUserProfileDto"];
+      };
     };
-    UserController_setup2FA: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description QR-код и секрет для настройки 2FA */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["QRCodeDto"];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["UserProfileDto"];
         };
+      };
     };
-    UserController_verify2FA: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["Verify2FADto"];
-            };
-        };
-        responses: {
-            /** @description 2FA успешно включена */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+  };
+  UserController_changePassword: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    AdminUserController_createByAdmin: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["CreateUserByAdminDto"];
-            };
-        };
-        responses: {
-            /** @description Создан новый пользователь */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["UserProfileDto"];
-                };
-            };
-            /** @description Ta’qiqlangan */
-            403: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Foydalanuvchi allaqachon mavjud */
-            409: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["ChangePasswordDto"];
+      };
     };
-    AdminUserController_getAll: {
-        parameters: {
-            query?: {
-                role?: "user" | "admin";
-                status?: "PENDING" | "ACTIVE" | "BLOCKED" | "DELETED";
-                email?: string;
-                page?: number;
-                limit?: number;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
+    responses: {
+      /** @description Пароль успешно изменен */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description Список пользователей с фильтрацией и пагинацией */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
+        content?: never;
+      };
+      /** @description Неверный текущий пароль */
+      400: {
+        headers: {
+          [name: string]: unknown;
         };
+        content?: never;
+      };
     };
-    AdminUserController_getById: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description ID пользователя */
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["UserProfileDto"];
-                };
-            };
-            /** @description Foydalanuvchi topilmadi */
-            204: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Ta’qiqlangan */
-            403: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+  };
+  UserController_getAccessLogs: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    AdminUserController_updateByAdmin: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description ID пользователя */
-                id: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description История входов пользователя */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["UpdateUserAdminDto"];
-            };
+        content: {
+          "application/json": components["schemas"]["AccessLogDto"][];
         };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["UserProfileDto"];
-                };
-            };
-            /** @description Foydalanuvchi topilmadi */
-            204: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Ta’qiqlangan */
-            403: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+      };
     };
-    AdminUserController_deleteByAdmin: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description ID пользователя */
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Пользователь помечен как удалён */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Foydalanuvchi topilmadi */
-            204: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Ta’qiqlangan */
-            403: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+  };
+  UserController_getAccessLogsByAdmin: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description ID пользователя */
+        id: string;
+      };
+      cookie?: never;
     };
-    AdminUserController_blockUser: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description История входов пользователя (admin only) */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
+        content: {
+          "application/json": components["schemas"]["AccessLogDto"][];
         };
+      };
+      /** @description Ta’qiqlangan */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Foydalanuvchi topilmadi */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
     };
-    AdminUserController_unblockUser: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+  };
+  UserController_setup2FA: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    AccessLogController_getLogs: {
-        parameters: {
-            query?: {
-                userId?: string;
-                eventType?: "REGISTER" | "LOGIN_SUCCESS" | "LOGIN_FAIL" | "EMAIL_VERIFIED" | "EMAIL_RESEND" | "EMAIL_FAILED" | "PASSWORD_CHANGED" | "ACCOUNT_BLOCKED" | "ACCOUNT_UNLOCKED" | "LOGIN_2FA_REQUIRED" | "ENABLE_2FA" | "DISABLE_2FA" | "LOGOUT" | "LOGIN_OAUTH_SUCCESS" | "LOGIN_OAUTH_FAIL" | "OAUTH_DISCONNECT" | "PASSWORD_SET_OAUTH_SUCCESS";
-                ipAddress?: string;
-                page?: number;
-                limit?: number;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description QR-код и секрет для настройки 2FA */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
+        content: {
+          "application/json": components["schemas"]["QRCodeDto"];
         };
+      };
     };
-    AuthController_register: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RegisterDto"];
-            };
-        };
-        responses: {
-            /** @description Письмо для подтверждения отправлено */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Некорректные данные */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+  };
+  UserController_verify2FA: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    AuthController_verifyEmail: {
-        parameters: {
-            query: {
-                token: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Email успешно подтверждён */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Email уже подтверждён */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Токен недействителен */
-            404: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["Verify2FADto"];
+      };
     };
-    AuthController_resendEmailVerification: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    responses: {
+      /** @description 2FA успешно включена */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["ResendVerificationDto"];
-            };
-        };
-        responses: {
-            /** @description Письмо отправлено */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Email уже подтверждён */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Пользователь не найден */
-            404: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+        content?: never;
+      };
     };
-    AuthController_login: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["LoginDto"];
-            };
-        };
-        responses: {
-            /** @description Успешный вход */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Неверные данные или 2FA включён */
-            401: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+  };
+  AdminUserController_createByAdmin: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    AuthController_logout: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Вы успешно вышли из системы */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["CreateUserByAdminDto"];
+      };
     };
-    AuthController_refreshTokens: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    responses: {
+      /** @description Создан новый пользователь */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description Access токен успешно обновлён */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
+        content: {
+          "application/json": components["schemas"]["UserProfileDto"];
         };
+      };
+      /** @description Ta’qiqlangan */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Foydalanuvchi allaqachon mavjud */
+      409: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
     };
-    AuthController_setPassword: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["SetPasswordDto"];
-            };
-        };
-        responses: {
-            /** @description Пароль успешно установлен */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+  };
+  AdminUserController_getAll: {
+    parameters: {
+      query?: {
+        role?: "user" | "admin";
+        status?: "PENDING" | "ACTIVE" | "BLOCKED" | "DELETED";
+        email?: string;
+        page?: number;
+        limit?: number;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    SessionController_getMySessions: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description Список пользователей с фильтрацией и пагинацией */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["SessionDto"][];
-                };
-            };
-        };
+        content?: never;
+      };
     };
-    SessionController_deleteOtherSessions: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            204: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+  };
+  AdminUserController_getById: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description ID пользователя */
+        id: string;
+      };
+      cookie?: never;
     };
-    SessionController_deleteAllSessions: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            204: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
+        content: {
+          "application/json": components["schemas"]["UserProfileDto"];
         };
+      };
+      /** @description Foydalanuvchi topilmadi */
+      204: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Ta’qiqlangan */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
     };
-    SessionController_deleteMySession: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            204: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+  };
+  AdminUserController_updateByAdmin: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description ID пользователя */
+        id: string;
+      };
+      cookie?: never;
     };
-    AdminSessionController_getAllSessions: {
-        parameters: {
-            query?: {
-                /** @description Номер страницы */
-                page?: number;
-                /** @description Размер страницы */
-                limit?: number;
-                /** @description IP-адрес */
-                ipAddress?: string;
-                /** @description Устройство */
-                device?: string;
-                /** @description ID пользователя */
-                userId?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["SessionDto"][];
-                };
-            };
-        };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["UpdateUserAdminDto"];
+      };
     };
-    AdminSessionController_deleteAllSessions: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
+        content: {
+          "application/json": components["schemas"]["UserProfileDto"];
         };
+      };
+      /** @description Foydalanuvchi topilmadi */
+      204: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Ta’qiqlangan */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
     };
-    AdminSessionController_getUserSessions: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                userId: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["SessionDto"][];
-                };
-            };
-        };
+  };
+  AdminUserController_deleteByAdmin: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description ID пользователя */
+        id: string;
+      };
+      cookie?: never;
     };
-    AdminSessionController_deleteSessionsByUserId: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                userId: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description Пользователь помечен как удалён */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
+        content?: never;
+      };
+      /** @description Foydalanuvchi topilmadi */
+      204: {
+        headers: {
+          [name: string]: unknown;
         };
+        content?: never;
+      };
+      /** @description Ta’qiqlangan */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
     };
-    AdminSessionController_deleteSession: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            204: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+  };
+  AdminUserController_blockUser: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        id: string;
+      };
+      cookie?: never;
     };
-    OAuthController_googleAuth: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+        content?: never;
+      };
     };
-    OAuthController_googleCallback: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Успешный вход через Google. Редирект на фронтенд с access_token */
-            302: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description OAuth user not found */
-            401: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+  };
+  AdminUserController_unblockUser: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        id: string;
+      };
+      cookie?: never;
     };
-    OAuthController_disconnectOAuth: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description OAuth провайдер */
-                provider: "google" | "yandex";
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description OAuth-аккаунт успешно удалён */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Нельзя удалить последний способ входа */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description OAuth-аккаунт не найден */
-            404: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+        content?: never;
+      };
     };
-    OAuthController_getConnectedAccounts: {
-        parameters: {
-            query?: {
-                /** @description Фильтр по OAuth-провайдеру */
-                provider?: "google";
-                /** @description Номер страницы */
-                page?: number;
-                /** @description Количество на странице */
-                limit?: number;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Список OAuth-аккаунтов пользователя с пагинацией и фильтрацией */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+  };
+  AccessLogController_getLogs: {
+    parameters: {
+      query?: {
+        userId?: string;
+        eventType?:
+          | "REGISTER"
+          | "LOGIN_SUCCESS"
+          | "LOGIN_FAIL"
+          | "EMAIL_VERIFIED"
+          | "EMAIL_RESEND"
+          | "EMAIL_FAILED"
+          | "PASSWORD_CHANGED"
+          | "ACCOUNT_BLOCKED"
+          | "ACCOUNT_UNLOCKED"
+          | "LOGIN_2FA_REQUIRED"
+          | "ENABLE_2FA"
+          | "DISABLE_2FA"
+          | "LOGOUT"
+          | "LOGIN_OAUTH_SUCCESS"
+          | "LOGIN_OAUTH_FAIL"
+          | "OAUTH_DISCONNECT"
+          | "PASSWORD_SET_OAUTH_SUCCESS";
+        ipAddress?: string;
+        page?: number;
+        limit?: number;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    OAuthController_yandexAuth: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+        content?: never;
+      };
     };
-    OAuthController_yandexCallback: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Успешный вход через Yandex. Редирект на фронт с access_token */
-            302: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description OAuth user not found */
-            401: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
+  };
+  AuthController_register: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["RegisterDto"];
+      };
+    };
+    responses: {
+      /** @description Письмо для подтверждения отправлено */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Некорректные данные */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  AuthController_verifyEmail: {
+    parameters: {
+      query: {
+        token: string;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Email успешно подтверждён */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Email уже подтверждён */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Токен недействителен */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  AuthController_resendEmailVerification: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["ResendVerificationDto"];
+      };
+    };
+    responses: {
+      /** @description Письмо отправлено */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Email уже подтверждён */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Пользователь не найден */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  AuthController_login: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["LoginDto"];
+      };
+    };
+    responses: {
+      /** @description Успешный вход */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Неверные данные или 2FA включён */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  AuthController_logout: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Вы успешно вышли из системы */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  AuthController_refreshTokens: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Access токен успешно обновлён */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  AuthController_setPassword: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["SetPasswordDto"];
+      };
+    };
+    responses: {
+      /** @description Пароль успешно установлен */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  SessionController_getMySessions: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["SessionDto"][];
+        };
+      };
+    };
+  };
+  SessionController_deleteOtherSessions: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      204: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  SessionController_deleteAllSessions: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      204: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  SessionController_deleteMySession: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      204: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  AdminSessionController_getAllSessions: {
+    parameters: {
+      query?: {
+        /** @description Номер страницы */
+        page?: number;
+        /** @description Размер страницы */
+        limit?: number;
+        /** @description IP-адрес */
+        ipAddress?: string;
+        /** @description Устройство */
+        device?: string;
+        /** @description ID пользователя */
+        userId?: string;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["SessionDto"][];
+        };
+      };
+    };
+  };
+  AdminSessionController_deleteAllSessions: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  AdminSessionController_getUserSessions: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        userId: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["SessionDto"][];
+        };
+      };
+    };
+  };
+  AdminSessionController_deleteSessionsByUserId: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        userId: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  AdminSessionController_deleteSession: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      204: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  OAuthController_googleAuth: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  OAuthController_googleCallback: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Успешный вход через Google. Редирект на фронтенд с access_token */
+      302: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description OAuth user not found */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  OAuthController_disconnectOAuth: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description OAuth провайдер */
+        provider: "google" | "yandex";
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description OAuth-аккаунт успешно удалён */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Нельзя удалить последний способ входа */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description OAuth-аккаунт не найден */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  OAuthController_getConnectedAccounts: {
+    parameters: {
+      query?: {
+        /** @description Фильтр по OAuth-провайдеру */
+        provider?: "google";
+        /** @description Номер страницы */
+        page?: number;
+        /** @description Количество на странице */
+        limit?: number;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Список OAuth-аккаунтов пользователя с пагинацией и фильтрацией */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  OAuthController_yandexAuth: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  OAuthController_yandexCallback: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Успешный вход через Yandex. Редирект на фронт с access_token */
+      302: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description OAuth user not found */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
 }
